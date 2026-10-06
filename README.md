@@ -4,6 +4,8 @@
 
 Splunk is a software platform that collects, indexes, and analyzes machine-generated data (like logs) in real time. This platform is widely used by many enterprises and large organizations for different purposes, such as security monitoring, IT operations, compliance, business analytics, and incident response.
 
+[![](<Splunk Home Lab/archi.png>)](<Splunk Home Lab/archi.png>)
+
 ---
 
 In this project i will walk you through:
@@ -117,7 +119,7 @@ Open **gpedit.msc** (Local Group Policy Editor) and enable these:
 
 Then run gpupdate /force in an admin Command Prompt to apply it.
 
-[![](<screenshots/Screenshot 2026-06-01 202704.png>)](<screenshots/Screenshot 2026-06-01 202704.png>) missing
+[![](<Splunk Home Lab/policy.png>)](<Splunk Home Lab/policy.png>) missing
 
 ---
 
@@ -140,8 +142,6 @@ Config folder (all config files live here): …**\etc\system\local**\
 
 [![](<Splunk Home Lab/Screenshot 2026-09-15 222911.png>)](<Splunk Home Lab/Screenshot 2026-09-15 222911.png>) 
 
-[![](<screenshots/Screenshot 2026-06-01 202704.png>)](<screenshots/Screenshot 2026-06-01 202704.png>) missing
-
 B. **Set forwarder (separate from splunk's login) via user-seed.conf in \etc\system\local**\:
 
 [user_info]
@@ -163,7 +163,7 @@ server = 192.xxx.x.xxx:9997 (host IP:destination port)
 
 D. **inputs.conf** - tell forwarder what to collect (security, system, application, Sysmon, PowerShell), all with index = windows (remember it is where splunk stores all data that comes from the host):
 
-[![](<screenshots/Screenshot 2026-06-01 202704.png>)](<screenshots/Screenshot 2026-06-01 202704.png>) missing the second picture
+[![](<Splunk Home Lab/outin.png>)](<Splunk Home Lab/outin.png>)
 
 
 E. **Grant Sysmon channel read access (the forwarder runs as a limited account NT Service\SplunkForwarder)**:
@@ -300,7 +300,7 @@ T1564.003 - Hide Artifacts (hidden window)
 
 Even though the attacker scrambled the command to hide it, windows records the actual code that ran. Inside that event's ScriptBlockText field, the real command - Write - Host "hello"- was visible, fully decoded. This proves that encoding a command does not defeat proper logging.
 
-[![](<Splunk Home Lab/encspl.png>)](<Splunk Home Lab/encspl.png*>) missing
+[![](<Splunk Home Lab/encspl.png>)](<Splunk Home Lab/encspl.png>)
 
 ---
 
