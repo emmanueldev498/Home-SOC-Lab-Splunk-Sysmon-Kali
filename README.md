@@ -240,9 +240,9 @@ All attacks below are non-destructive-they either create nothing or create one h
 
 **Mitre att&ck**: T1016 & T1049
 
-[![](<Splunk Home Lab/spipall.png>)](<Splunk Home Lab/spipall.png>)
+[![](<Splunk Home Lab/Screenshot 2026-09-27 231425.png>)](<Splunk Home Lab/Screenshot 2026-09-27 231425.png>)
 
-[![](<screenshots/Screenshot 2026-06-01 202704.png>)](<screenshots/Screenshot 2026-06-01 202704.png>) missing
+[![](<Splunk Home Lab/spipall.png>)](<Splunk Home Lab/spipall.png>)
 
 ---
 
@@ -309,7 +309,7 @@ Even though the attacker scrambled the command to hide it, windows records the a
 **What it is**:
 windows defender blocked the download and flagged it as a threat (confirmed with **Get-MpThreatDetection**). This was a bonus result - instead of just seeing the attack, the lab also captured the defense catching it in real time. That's exactly the "**attack → block → log**" chain a real SOC investigates.
 
-[![](<Splunk Home Lab/Get MP.png>)](<Splunk Home Lab/Get MP.png>) 
+[![](<Splunk Home Lab/whoami.png>)](<Splunk Home Lab/whoami.png>) 
 
 ---
 
@@ -352,6 +352,8 @@ index=windows (EventCode=4624 OR EventCode=4625) Account_Name="testuser" | table
 10:30:16 4625 FAILURE (wrong3)
 
 10:30:37 4624 SUCCESS ← the break-in
+
+[![](<Splunk Home Lab/Screenshot 2026-09-30 104718.png>)](<Splunk Home Lab/Screenshot 2026-09-30 104718.png>)
 
 Three failures followed by a success, all from the same attacker IP within seconds - this is exactly the pattern that would page a real security analyst in the middle of the night. It was also confirmed that a remote SMB login shows **Logon_Type = 3**, which distinguishes a network login from someone physically at the keyboard (**Logon_Type = 2**).
 
