@@ -4,7 +4,7 @@
 
 Splunk is a software platform that collects, indexes, and analyzes machine-generated data (like logs) in real time. This platform is widely used by many enterprises and large organizations for different purposes, such as security monitoring, IT operations, compliance, business analytics, and incident response.
 
-[![](<Splunk Home Lab/archi.png>)](<Splunk Home Lab/archi.png>)
+[![Project Architecture](<Splunk Home Lab/Screenshot 2026-10-07 124110.png>)](<Splunk Home Lab/Screenshot 2026-10-07 124110.png>)
 
 ---
 
